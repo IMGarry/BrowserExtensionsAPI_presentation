@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <title>reveal.js</title>
+
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/black.css" />
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							# What is browser Extensions
+							<p>Firmware that expands (complements) the functionality of the browser</p>	
+
+							A paragraph with some text and a [link](http://hakim.se).
+							---
+
+							### What Extensions can do:
+							<img src="./examples/assets/1.4.1.png" alt="">
+
+							---
+							## Slide 3
+							
+							
+							<pre><code data-trim data-noescape>
+								(def lazy-fib
+								  (concat
+								   [0 1]
+								   ((fn rfib [a b]
+									  (lazy-cons (+ a b) (rfib b (+ a b)))) 0 1)))
+								  </code>
+							</pre>
+						</textarea
+            >
+          </section>
+        </section>
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							## What Extensions can do:
+							---
+							### Show users their personality
+
+							---
+							### Add or remove content from web pages
+							---
+							### Add tools and new browsing features
+							---
+							### Add development tools
+							
+
+						</textarea
+            >
+          </section>
+        </section>
+
+        <section>
+          <section data-markdown>
+            <textarea data-template>
+							## Anatomy of an extension
+							<p>An extension consists of a collection of files, packaged for distribution and installation</p>
+							---
+							### manifest.json
+							<p>This is the only file that must be present in every extension.</p>
+							<img src="./examples/assets/3.2.jpg" alt="">
+
+							---
+							### Background scripts
+							<p>Extensions often need to maintain long-term state or perform long-term operations 
+							independently of the lifetime of any particular web page or browser window. That is what background scripts are for.</p>
+
+							<pre><code data-trim data-noescape>
+								// manifest.json
+
+								"background": {
+  									"scripts": ["background-script.js"]
+								}
+								</code>
+							</pre>
+							
+							---
+							<p>Instead of specifying background scripts, you can specify a background page which has the added advantage of supporting ES6 modules:</p> 
+							<img src="./examples/assets/3.3.png" alt="">
+
+							---
+							### [Sidebars](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Sidebars), [Popups](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Popups), and [Options pages](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Popups)
+							
+
+							<img src="./examples/assets/3.5.1.png" alt="">
+							
+							---
+							### Extension pages
+							See [Extension pages](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Extension_pages) to learn more.
+							<p>You can also include HTML documents in your extension 
+								which are not attached to some predefined user interface component.</p>
+							<img src="./examples/assets/3.6.png" alt="">
+							
+							  
+							---
+							### Add development tools
+							
+
+						</textarea>
+          </section>
+        </section>
+
+		<section>
+			<section data-markdown>
+			  <textarea data-template>
+							  ## Anatomy of an extension
+							  <p>An extension consists of a collection of files, packaged for distribution and installation</p>
+							  ---
+							  ### manifest.json
+							  <p>This is the only file that must be present in every extension.</p>
+							  <img src="./examples/assets/3.2.jpg" alt="">
+  
+							  ---
+							  ### Background scripts
+							  <p>Extensions often need to maintain long-term state or perform long-term operations 
+							  independently of the lifetime of any particular web page or browser window. That is what background scripts are for.</p>
+  
+							  <pre><code data-trim data-noescape>
+								  // manifest.json
+  
+								  "background": {
+										"scripts": ["background-script.js"]
+								  }
+								  </code>
+							  </pre>
+							  
+							  ---
+							  <p>Instead of specifying background scripts, you can specify a background page which has the added advantage of supporting ES6 modules:</p> 
+							  <img src="./examples/assets/3.3.png" alt="">
+  
+							  ---
+							  ### [Sidebars](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Sidebars), [Popups](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Popups), and [Options pages](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Popups)
+							  
+  
+							  <img src="./examples/assets/3.5.1.png" alt="">
+							  
+							  ---
+							  ### Extension pages
+							  See [Extension pages](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/user_interface/Extension_pages) to learn more.
+							  <p>You can also include HTML documents in your extension 
+								  which are not attached to some predefined user interface component.</p>
+							  <img src="./examples/assets/3.6.png" alt="">
+							  
+								
+							  ---
+							  ### Add development tools
+							  
+  
+						  </textarea>
+			</section>
+		  </section>
+
+		  
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+		slideNumber: true,
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      })
+    </script>
+  </body>
+</html>
